@@ -36,6 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'rest_framework',
+    'follow',
+    'like',
+    'tweet',
+    'retweet',
     'corsheaders',
 ]
 
