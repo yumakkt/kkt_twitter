@@ -11,7 +11,10 @@ from rest_framework.response import Response
 from tweet.businesses.main import (
     list_own_timeline,
     retrieve_tweet_by_id,
+    tweet_my_mutter,
+    fix_my_mutter
 )
+
 # Create your views here.
 # tweet一覧（自分がフォローしてるユーザーの）
 # リストのフィルタリング
@@ -29,10 +32,8 @@ class TweetViewSet(viewsets.ModelViewSet):
         return Response(retrieve_tweet_by_id(pk))
     
     def create(self, request):
-        return Response(retrieve_tweet_by_id(pk))
+        return Response(tweet_my_mutter(request.user.id, request.data["mutter"]))
     
     def update(self, request, pk=None):
-        request.user.id
-        request.data
-        return Response(retrieve_tweet_by_id(pk))
+        return Response(fix_my_mutter(pk, request.data["mutter"]))
     

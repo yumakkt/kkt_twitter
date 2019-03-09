@@ -1,4 +1,6 @@
 
+def tweet_list(tweet_queryset):
+    return [tweet_dict(tweet_model) for tweet_model in tweet_queryset]
 
 def tweet_dict(tweet_model):
     return {

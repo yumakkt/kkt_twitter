@@ -11,3 +11,14 @@ def list_following_user_tweets(following_user_ids):
 
 def retrieve_tweet_by_id(tweet_id):
     return Tweet.objects.get(pk=tweet_id)
+
+def create_tweet(user_id, mutter):
+    tweet = Tweet(tweeted_by=user_id, mutter=mutter)
+    tweet.save()
+    return tweet
+    
+def update_tweet(tweet_id, mutter):
+    tweet = retrieve_tweet_by_id(tweet_id)
+    tweet.mutter = mutter
+    tweet.save()
+    return tweet
