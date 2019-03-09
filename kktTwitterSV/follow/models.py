@@ -9,3 +9,7 @@ class Follow(models.Model):
     by = models.ForeignKey(User, verbose_name="フォロワー", on_delete=models.CASCADE, db_column="followed_by", related_name='followers')
     # フォローし始めた日付
     started_at = models.DateTimeField(verbose_name="フォロータイミング", auto_now_add=True)
+    
+    class Meta:
+        verbose_name = 'follow'
+        verbose_name_plural = 'follows'

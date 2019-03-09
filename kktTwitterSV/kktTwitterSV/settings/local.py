@@ -26,3 +26,4 @@ if 'test' in sys.argv:
         'NAME': 'kkttwitter_test_db', #　作成したデータベース名
     }
 
+REST_FRAMEWORK["DEFAULT_PERMISSION_CLASSES"] = ('rest_framework.permissions.AllowAny',)

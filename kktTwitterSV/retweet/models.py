@@ -10,3 +10,7 @@ class ReTweet(models.Model):
     retweeted_at = models.DateTimeField(verbose_name="リツイートタイミング", auto_now_add=True)
     # リツイートした人
     retweeted_by = models.ForeignKey(User, verbose_name="リツイートユーザー", on_delete=models.CASCADE, db_column="user_id", related_name='retweets')
+    
+    class Meta:
+        verbose_name = 'retweet'
+        verbose_name_plural = 'retweet'

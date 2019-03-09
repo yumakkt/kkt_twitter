@@ -12,6 +12,11 @@ class Tweet(models.Model):
     tweeted_by = models.ForeignKey(User, verbose_name="ユーザー", on_delete=models.CASCADE, db_column="user_id", related_name='tweets')
     # つぶやき先
     tweeted_to = models.ForeignKey("self", on_delete=models.CASCADE, db_column="tweetwd_to", related_name='tweeted_by_s', verbose_name="つぶやき先", null=True)
-
     
+    def __str__(self):
+        return self.mutter
+        
+    class Meta:
+        verbose_name = 'tweet'
+        verbose_name_plural = 'tweet'
 

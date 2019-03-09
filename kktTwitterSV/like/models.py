@@ -12,3 +12,7 @@ class Like(models.Model):
     # likeした人
     liked_by = models.ForeignKey(User, verbose_name="Likeユーザー", on_delete=models.CASCADE, db_column="user_id", related_name='likes')
     
+    
+    class Meta:
+        verbose_name = 'like'
+        verbose_name_plural = 'likes'

@@ -20,4 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('user.urls')),
     path('tweet/', include('tweet.urls')),
+    path('retweet/', include('retweet.urls')),
+    path('like/', include('like.urls')),
+    path('follow/', include('follow.urls')),
 ]
