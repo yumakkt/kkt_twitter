@@ -14,9 +14,9 @@ def retrieve_tweet_by_id(tweet_id):
     return display.tweet_dict(accessor.retrieve_tweet_by_id((tweet_id)))
 
 def tweet_my_mutter(user_id, mutter):
-    accessor.create_tweet()
-    return 
+    created_tweet = accessor.create_tweet(user_id, mutter)
+    return display.tweet_dict(created_tweet)
 
 def fix_my_mutter(tweet_id, mutter):
-    accessor.update_tweet()
-    
+    updated_tweet = accessor.update_tweet(tweet_id, mutter)
+    return display.tweet_dict(updated_tweet)

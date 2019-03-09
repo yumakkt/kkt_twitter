@@ -13,7 +13,7 @@ def retrieve_tweet_by_id(tweet_id):
     return Tweet.objects.get(pk=tweet_id)
 
 def create_tweet(user_id, mutter):
-    tweet = Tweet(tweeted_by=user_id, mutter=mutter)
+    tweet = Tweet(tweeted_by_id=user_id, mutter=mutter)
     tweet.save()
     return tweet
     
