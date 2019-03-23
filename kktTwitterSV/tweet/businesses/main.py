@@ -7,7 +7,7 @@ def list_own_timeline(user_id):
     # フォローしているユーザーidのリスト取得
     following_user_ids = accessor.list_following_user_ids(user_id)
     # ユーザーのIDを取得する。
-    own_timeline = accessor.list_following_user_tweets(following_user_ids)
+    own_timeline = accessor.list_following_user_tweets([user_id] + list(following_user_ids))
     return display.tweet_list(own_timeline)
 
 def retrieve_tweet_by_id(tweet_id):

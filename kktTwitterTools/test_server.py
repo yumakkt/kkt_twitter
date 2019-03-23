@@ -1,8 +1,11 @@
 from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
+from flask_cors import CORS
 
 app = Flask(__name__)
 api = Api(app)
+
+CORS(app)
 
 TODOS = {
     'todo1': {'task': 'build an API'},
@@ -54,8 +57,8 @@ class TodoList(Resource):
 ##
 ## Actually setup the Api resource routing here
 ##
-api.add_resource(TodoList, '/todos')
-api.add_resource(Todo, '/todos/<todo_id>')
+api.add_resource(TodoList, '/todos/')
+api.add_resource(Todo, '/todos/<todo_id>/')
 
 
 if __name__ == '__main__':

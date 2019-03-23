@@ -1,42 +1,25 @@
-import { combineReducers } from 'redux'
-import { CHANGE_NAME, CHANGE_AGE, INITIALIZE_FORM } from './actions'
+import { FETCH_TODO, RAISE_IS_FETCHING } from './actions'
 
 const initialState = {
     todos: {  // AddFormに入力されている文字列
       // todoN: {task: taskContents}
     },
-
+    isFetching: false
 }
 
-const formReducer = (state = initialState.form, action) => {
+export const todoReducer = (state = initialState, action) => {
     switch (action.type) {
-      case CHANGE_NAME:
+      case FETCH_TODO:
         return {
           ...state,
-          name: action.name,
+          todos: action.todos,
         }
-      case CHANGE_AGE:
+      case RAISE_IS_FETCHING:
         return {
           ...state,
-          age: action.age,
+          isFetching: action.isFetching,
         }
-      case INITIALIZE_FORM:
-        return initialState.form
       default:
         return state
     }
   }
-
- const charactersReducer = (state = initialState.characters, action) => {
-     switch (action.type) {
-       default:
-         return state
-     }
-   }
-    
-   const rootReducer = combineReducers({
-     form: formReducer,
-     characters: charactersReducer,
-   })
-    
-export default rootReducer
